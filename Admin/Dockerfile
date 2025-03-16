@@ -1,13 +1,20 @@
-FROM python:3.12
+# Use an official Python runtime as a parent image
+FROM python:3.12-slim
 
-EXPOSE 8084
-
+# Set the working directory in the container
 WORKDIR /app
 
-COPY requirements.txt ./
+# Copy only the requirements first to leverage Docker caching
+COPY requirements.txt .
 
-RUN pip install -r requirements.txt
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . ./
+# Copy the entire project into the container
+COPY . .
 
-ENTRYPOINT [ "streamlit", "run", "app.py", "--server.port=8084", "--server.address=0.0.0.0" ]
+# Expose the port Streamlit will run on
+EXPOSE 8084
+
+# Command to run the Streamlit app
+CMD [ "streamlit", "run", "admin.py", "--server.port=8084", "--server.address=0.0.0.0" ]

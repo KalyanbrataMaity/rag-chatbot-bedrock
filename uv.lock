@@ -468,6 +468,21 @@ wheels = [
 ]
 
 [[package]]
+name = "langchain-aws"
+version = "0.2.15"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "boto3" },
+    { name = "langchain-core" },
+    { name = "numpy" },
+    { name = "pydantic" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/20/00/f9d875fc0af37d42ad19cea9eeda74bb9ef7107edbe427bfef53f9379ee9/langchain_aws-0.2.15.tar.gz", hash = "sha256:0b223c1e9cfabadf7d509497881fb1e67e2e419dcd7b14980c99be67be6cd298", size = 90012 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/8a/47/8ec6882d16a8f4e5062f3d0b0471a079cde2b573e383efd9e67032de0c1f/langchain_aws-0.2.15-py3-none-any.whl", hash = "sha256:9e581252ba2b218523f78729ea56f13ea23ed96b43dd5d3f197386ba02546cfd", size = 109276 },
+]
+
+[[package]]
 name = "langchain-community"
 version = "0.3.19"
 source = { registry = "https://pypi.org/simple" }
@@ -946,6 +961,7 @@ dependencies = [
     { name = "boto3" },
     { name = "faiss-cpu" },
     { name = "langchain" },
+    { name = "langchain-aws" },
     { name = "langchain-community" },
     { name = "pypdf" },
     { name = "streamlit" },
@@ -956,6 +972,7 @@ requires-dist = [
     { name = "boto3", specifier = ">=1.37.13" },
     { name = "faiss-cpu", specifier = ">=1.10.0" },
     { name = "langchain", specifier = ">=0.3.20" },
+    { name = "langchain-aws", specifier = ">=0.2.15" },
     { name = "langchain-community", specifier = ">=0.3.19" },
     { name = "pypdf", specifier = ">=5.3.1" },
     { name = "streamlit", specifier = ">=1.43.2" },
